@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=gb2312">
+    <title>我是测试的html页面的标题</title>
+    <style>
+        body{
+            height: calc(100vh);
+            width: calc(100vw);
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+这是第二个html页面</br>
+<button onclick="fromNative.back()">这是一个html的按钮，调用一个原生的方法，回退到第一个页面</button>
+<script type="text/javascript">
+    var fromNative = {
+        back(){
+            window.android.goBack()
+            <!--alert(window.android.goBack())-->
+        }
+    }
+</script>
+</body>
+</html>

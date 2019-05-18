@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=gb2312">
+    <title>我是测试的html页面的标题</title>
+    <style>
+        body{
+            height: calc(100vh);
+            width: calc(100vw);
+            background: red;
+        }
+        p{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+这是html页面
+</br>
+<button onclick="fromNative.show()">这是一个html的按钮，调用一个原生的方法</button>
+<br>
+<button onclick="fromNative.go()">点击跳转第二个html页面</button>
+<p id="p">我是一个p标签</p>
+<script type="text/javascript">
+
+
+    var fromNative = {
+        show(){
+            var content = window.android.back()
+            document.getElementById("p").innerHTML=content
+        },
+        go(){
+            <!--window.android.replaceView()-->
+            window.location.href = "file:///android_asset/test2.html"
+        }
+
+    }
+
+    function sum(a,b){
+	  return a+b;
+	}
+
+	function alertMessage(message){
+      alert("111" + message);
+    }
+   </script>
+</body>
+</html>
